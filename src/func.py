@@ -55,9 +55,14 @@ def imp(board):
 def play(board,player,eu):##random
     
     if(player=='o'and eu==True):
-        imp(board)
+        imp(board)        
         linha=int(input('Digite linha: '))-1
         coluna=int(input('Digite coluna: '))-1
+
+        while(not playable(board,(linha, coluna))):
+            print('Posicoes invalidas')
+            linha=int(input('Digite linha: '))-1
+            coluna=int(input('Digite coluna: '))-1
         
     else:
         x=intart.iaplays(board,player)
@@ -71,7 +76,8 @@ def play(board,player,eu):##random
     board[linha][coluna]=player
     imp(board)
     
-   
+def playable(board, pos):
+    return board[pos[0]][pos[1]] == '' 
 
 def checa_ja_jogado(board,i,j):#true para jogado
     if(board[i][j]=='x' or board[i][j]=='o'):

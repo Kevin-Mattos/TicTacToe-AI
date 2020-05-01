@@ -8,7 +8,7 @@ def num_partidas(qtd,who):
     k=0
     stats=[0,0,0]
     while(i<qtd):
-        k=func.partida(board,player,who,True)
+        k=func.partida(board,player,who,False)
         stats[k]=stats[k]+1
         i=i+1
         func.imp(board)
@@ -26,8 +26,9 @@ def num_partidas(qtd,who):
 x=int(input("deseja jogar quantas partidas: "))
 y=int(input("0 pc comeca,1 vc comeca: "))
 q=1
-for i in range(0,x):
-    num_partidas(q,y)
+num_partidas(x, y)
+#for i in range(0,x):
+#    num_partidas(q,y)
 
 
 #x=intart.smart(func.zera_tab())
