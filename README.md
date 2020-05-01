@@ -1,0 +1,2 @@
+# TicTacToe-AI
+ algoritmo minmax
